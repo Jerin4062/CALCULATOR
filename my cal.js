@@ -1,12 +1,11 @@
-// Simple calculator logic with keyboard support and basic sanitization
+
 
 const display = document.getElementById('display');
 const preview = document.getElementById('preview');
 const keys = document.querySelector('.keys');
 
-let expr = ''; // visible expression using × ÷ −
-let safeExpr = ''; // sanitized expression for evaluation (* / - +)
-
+let expr = ''; 
+let safeExpr = ''; 
 function updateUI() {
   display.value = expr || '0';
   preview.textContent = expr;
@@ -92,7 +91,8 @@ window.addEventListener('keydown', (ev) => {
     updateUI();
     return;
   }
-  // map keyboard operators to visual ones
+
   const map = { '/': '÷', '*': '×', '-': '−', '+': '+' , '(': '(', ')':')' };
   if (map[ev.key]) { expr += map[ev.key]; updateUI(); return; }
 });
+
